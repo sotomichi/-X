@@ -1,2 +1,58 @@
-# -X
-今日の占いWEBアプリ
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>今日の運勢</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background-image: url("https://source.unsplash.com/1600x900/?crystal,galaxy,magic");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: white;
+    }
+
+    button {
+      font-size: 1.5em;
+      padding: 10px 30px;
+      border: none;
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      cursor: pointer;
+    }
+
+    #result {
+      font-size: 2em;
+      margin-top: 30px;
+      padding: 1em;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      text-shadow: 1px 1px 3px black;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔮 今日の運勢</h1>
+  <button onclick="showFortune()">占う！</button>
+  <div id="result"></div>
+
+  <script>
+    const fortunes = [
+      '🌟 大吉：最高の一日になります！',
+      '😊 中吉：いい感じの運勢です。',
+      '😐 小吉：まあまあ平和な日です。',
+      '😅 凶：慎重に過ごしましょう。',
+      '💀 大凶：今日はおとなしく...'
+    ];
+
+    function showFortune() {
+      const result = fortunes[Math.floor(Math.random() * fortunes.length)];
+      document.getElementById('result').innerText = result;
+    }
+  </script>
+</body>
+</html>
